@@ -1,0 +1,26 @@
+/* inner container  */
+.main {
+  padding: 8px 21px;
+  max-width: 1200px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.drawer {
+  padding: 21px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  background-color: #f2f2f27c;
+  border-radius: 8px;
+  border: 1px solid #f2f2f2;
+  padding: 5px 21px;
+}

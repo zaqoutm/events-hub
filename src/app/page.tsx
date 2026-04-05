@@ -1,11 +1,13 @@
 import Image from 'next/image';
 import styles from './page.module.css';
 import { Metadata } from 'next';
+import { EventsList } from '@/components/ui/EventsList/page';
 
 const description = 'hello';
 const title = 'EH';
 const url = 'https://test.com';
 
+// metadata
 export const metadata: Metadata = {
   title: title,
   description: description,
@@ -22,18 +24,15 @@ export const metadata: Metadata = {
   },
 };
 
+// home page, list all events
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Image className={styles.logo} src='/logo-events-hub.png' alt='logo' width={100} height={20} priority />
         <div className={styles.intro}>
-          <h1>Hello, events hub!</h1>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium vitae ex, cum molestias fugit reprehenderit atque repellat nobis
-            cupiditate, fuga sequi quisquam amet quae optio tempore! Eaque ut fugiat voluptate.
-          </p>
+          <h1>Welcome back, to Events Hub!</h1>
         </div>
+        <EventsList />
       </main>
     </div>
   );

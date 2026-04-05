@@ -9,25 +9,21 @@
   --button-secondary-hover: #f2f2f2;
   --button-secondary-border: #ebebeb;
 
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-family: var(--font-geist-sans);
   background-color: var(--background);
+  min-height: 100vh;
 }
 
 .main {
   max-width: 1200px;
   margin-inline: auto;
-}
-
-.logo {
-  min-height:130px ;
-  min-width:130px ;
+  padding: 21px;
 }
 
 .intro {
-  max-width: 600px;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 21px;
+  color: #66666659;
+  font-family: var(--x);
 }

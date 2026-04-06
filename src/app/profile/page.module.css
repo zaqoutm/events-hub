@@ -1,0 +1,35 @@
+.page {
+  font-family: var(--font-geist-sans);
+  background-color: var(--background);
+  min-height: 100vh;
+}
+
+.main {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 21px;
+}
+
+.main h1 {
+  font-family: var(--x);
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding: 21px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.profile p {
+  background-color: #f2f2f267;
+  border: 1px solid #f2f2f267;
+  border-radius: 13px;
+  padding: 5px 21px;
+  width: fit-content;
+}
+
+.logout {
+  padding: 21px 0;
+}

@@ -1,16 +1,37 @@
 'use client';
-import Link from 'next/link';
-import styles from './Navigation.module.css';
-import { Avatar, Drawer, IconButton } from '@mui/material';
-import { useState } from 'react';
-import MenuIcon from '@mui/icons-material/Menu';
+import superbaseClient from '@/lib/superbase/client';
 import { InfoOutline } from '@mui/icons-material';
+import MenuIcon from '@mui/icons-material/Menu';
+import { Avatar, Drawer, IconButton } from '@mui/material';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import styles from './Navigation.module.css';
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
   const toggleDrawer = () => {
     setOpen(!open);
   };
+
+  const [user, setUser]: any = useState(null);
+
+  useEffect(() => {
+    const getUser = async () => {
+      const {
+        data: { user },
+      } = await superbaseClient.auth.getUser();
+      setUser(user);
+    };
+
+    superbaseClient.auth.onAuthStateChange((event) => {
+      // console.log(event);
+      if (event === 'SIGNED_OUT') {
+        setUser(null);
+      }
+    });
+
+    getUser();
+  }, []);
 
   return (
     <div className={styles.page}>
@@ -24,7 +45,11 @@ export default function Navigation() {
         </div>
 
         <Link href={'/profile'}>
-          <Avatar alt='Mohammed' src='' sx={{ width: 34, height: 34 }} />
+          {user ? (
+            <Avatar alt='Mohammed' src={user.user_metadata.avatar_url} sx={{ width: 34, height: 34 }} />
+          ) : (
+            <Avatar alt='' sx={{ width: 34, height: 34 }} />
+          )}
         </Link>
       </main>
 

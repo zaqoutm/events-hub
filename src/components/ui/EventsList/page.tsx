@@ -1,12 +1,11 @@
 'use client';
-import styles from './style.module.css';
-import superbaseClient from '@/lib/superbaseClients';
-import moment from 'moment';
-import { useEffect, useState } from 'react';
-import LocationOnTwoToneIcon from '@mui/icons-material/LocationOnTwoTone';
-import { Flag, TodayTwoTone } from '@mui/icons-material';
+import superbaseClient from '@/lib/superbase/client';
+import { Flag } from '@mui/icons-material';
 import AccessTimeTwoToneIcon from '@mui/icons-material/AccessTimeTwoTone';
+import moment from 'moment';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import styles from './style.module.css';
 
 type Event = {
   id: number;

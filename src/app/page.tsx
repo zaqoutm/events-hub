@@ -1,9 +1,8 @@
-import Image from 'next/image';
-import styles from './page.module.css';
-import { Metadata } from 'next';
 import { EventsList } from '@/components/ui/EventsList/page';
+import { Metadata } from 'next';
+import styles from './page.module.css';
 
-const description = 'hello';
+const description = 'Home page';
 const title = 'EH';
 const url = 'https://test.com';
 
@@ -17,10 +16,10 @@ export const metadata: Metadata = {
     title: title,
     description: description,
     url: url,
-    images: ['/ss-aljazara.png'],
+    images: ['...'],
   },
   alternates: {
-    canonical: `${url}/about`,
+    canonical: `${url}/`,
   },
 };
 

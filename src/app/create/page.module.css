@@ -1,0 +1,15 @@
+.page {
+  font-family: var(--font-geist-sans);
+  background-color: var(--background);
+  min-height: 100vh;
+}
+
+.main {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 21px;
+}
+
+.main h1 {
+  font-family: var(--x);
+}

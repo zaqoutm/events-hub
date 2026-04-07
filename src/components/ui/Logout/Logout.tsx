@@ -8,7 +8,7 @@ import { redirect } from 'next/navigation';
 export const LogutButton = () => {
   const doLogout = async () => {
     await superbaseClient.auth.signOut();
-    redirect('/');
+    redirect('/login');
   };
 
   return (

@@ -1,18 +1,11 @@
 'use client';
 import superbaseClient from '@/lib/superbase/client';
-import { InfoOutline } from '@mui/icons-material';
-import MenuIcon from '@mui/icons-material/Menu';
-import { Avatar, Drawer, IconButton } from '@mui/material';
+import { Avatar } from '@mui/material';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import styles from './Navigation.module.css';
 
 export default function Navigation() {
-  const [open, setOpen] = useState(false);
-  const toggleDrawer = () => {
-    setOpen(!open);
-  };
-
   const [user, setUser]: any = useState(null);
 
   useEffect(() => {
@@ -24,7 +17,6 @@ export default function Navigation() {
     };
 
     superbaseClient.auth.onAuthStateChange((event) => {
-      // console.log(event);
       if (event === 'SIGNED_OUT') {
         setUser(null);
       }
@@ -37,11 +29,8 @@ export default function Navigation() {
     <div className={styles.page}>
       <main className={styles.main}>
         <div className={styles.links}>
-          <IconButton onClick={toggleDrawer}>
-            <MenuIcon />
-          </IconButton>
           <Link href={'/'}>Home</Link>
-          <Link href={'/create'}>Create</Link>
+          {user && <Link href={'/create'}>Create</Link>}
         </div>
 
         <Link href={'/profile'}>
@@ -52,14 +41,6 @@ export default function Navigation() {
           )}
         </Link>
       </main>
-
-      {/*  */}
-      <Drawer open={open} onClose={toggleDrawer} anchor='bottom'>
-        <div className={styles.drawer}>
-          <InfoOutline />
-          <p>Help</p>
-        </div>
-      </Drawer>
     </div>
   );
 }

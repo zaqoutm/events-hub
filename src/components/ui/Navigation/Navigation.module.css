@@ -1,5 +1,13 @@
+.page {
+  border-bottom: 1px solid #ddd;
+  box-shadow: 5px 10px 12px -8px #ddd;
+  z-index: 1;
+}
+
 /* inner container  */
 .main {
+  background-color: #fff;
+  min-height: 74px;
   padding: 8px 21px;
   max-width: 1200px;
   margin-inline: auto;
@@ -8,19 +16,16 @@
   justify-content: space-between;
 }
 
-.drawer {
-  padding: 21px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
 .links {
   display: flex;
   align-items: center;
   gap: 13px;
-  background-color: #f2f2f27c;
   border-radius: 8px;
-  border: 1px solid #f2f2f2;
   padding: 5px 21px;
+}
+.links a {
+  padding: 5px 21px;
+  border: 1px solid #e1e1e1;
+  background-color: #f2f2f27c;
+  border-radius: 13px;
 }

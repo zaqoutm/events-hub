@@ -10,7 +10,6 @@
   --button-secondary-border: #ebebeb;
 
   font-family: var(--font-geist-sans);
-  background-color: var(--background);
   min-height: 100vh;
 }
 
@@ -25,5 +24,8 @@
   align-items: flex-end;
   margin-bottom: 21px;
   color: #66666659;
-  font-family: var(--x);
+}
+.intro h1 {
+  font-weight: 200;
+  font-size: 21px;
 }

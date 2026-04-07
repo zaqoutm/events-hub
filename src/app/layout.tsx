@@ -1,7 +1,8 @@
+import LiveVisitors from '@/components/ui/LiveVisitors/LiveVisitors';
+import Navigation from '@/components/ui/Navigation/Navigation';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Playwrite_AU_SA } from 'next/font/google';
 import './globals.css';
-import Navigation from '@/components/ui/Navigation/Navigation';
 
 const geistSPlay = Playwrite_AU_SA({
   variable: '--x',
@@ -31,6 +32,7 @@ export default function RootLayout({
     <html lang='en' className={`${geistSans.variable} ${geistMono.variable} ${geistSPlay.variable} `}>
       <body>
         <Navigation />
+        <LiveVisitors />
         {children}
       </body>
     </html>

@@ -2,12 +2,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 13px;
+  align-items: flex-start;
 }
 
 .eventCard {
   background-color: white;
-  border: 1px solid #f2f2f2;
-  box-shadow: 0 0 13px -4px #ddd;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 16px -4px #ddd;
   border-radius: 8px;
   padding: 13px;
   min-height: 156px;
@@ -15,14 +16,39 @@
   flex-grow: 1;
 }
 
+.eventCardImageContainer {
+  border: 1px solid #ddd;
+  max-height: 250px;
+  min-height: 200px;
+  overflow: hidden;
+  margin-bottom: 13px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+.eventCardNoImage {
+  width: 200px;
+  height: auto;
+  opacity: 0.2;
+}
+
+.eventCardImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: top;
+}
+
 .eventCardFooter {
   margin-top: 21px;
-  margin-bottom: 21px;
   padding: 5px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  border: 1px solid #f2f2f2;
+  gap: 8px;
+  border-top: 1px solid #f2f2f2;
+  padding-top: 21px;
+  opacity: 0.8;
 }
 
 .eventCardFooter p {

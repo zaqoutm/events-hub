@@ -1,8 +1,10 @@
 import LiveVisitors from '@/components/ui/LiveVisitors/LiveVisitors';
 import Navigation from '@/components/ui/Navigation/Navigation';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Playwrite_AU_SA } from 'next/font/google';
 import './globals.css';
+import AppThemeProvider from './themes/themProvider';
 
 const geistSPlay = Playwrite_AU_SA({
   variable: '--x',
@@ -31,9 +33,13 @@ export default function RootLayout({
   return (
     <html lang='en' className={`${geistSans.variable} ${geistMono.variable} ${geistSPlay.variable} `}>
       <body>
-        <Navigation />
-        <LiveVisitors />
-        {children}
+        <AppRouterCacheProvider>
+          <AppThemeProvider>
+            <Navigation />
+            <LiveVisitors />
+            {children}
+          </AppThemeProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );
